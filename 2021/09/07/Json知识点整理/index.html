@@ -20,31 +20,41 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","version":"8.7.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="对于现阶段所接触的FSM有限状态机的小结.">
+<meta name="description" content="现阶段所掌握的Json相关技术的整理归纳">
 <meta property="og:type" content="article">
-<meta property="og:title" content="FSM的小结">
-<meta property="og:url" content="http://example.com/2021/08/12/FSM%E7%9A%84%E5%B0%8F%E7%BB%93/index.html">
+<meta property="og:title" content="Json知识点整理">
+<meta property="og:url" content="http://example.com/2021/09/07/Json%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86/index.html">
 <meta property="og:site_name" content="瞎写">
-<meta property="og:description" content="对于现阶段所接触的FSM有限状态机的小结.">
+<meta property="og:description" content="现阶段所掌握的Json相关技术的整理归纳">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2021/08/12/FSM%E7%9A%84%E5%B0%8F%E7%BB%93/FSM_1.PNG">
-<meta property="article:published_time" content="2021-08-12T09:29:46.000Z">
-<meta property="article:modified_time" content="2021-08-12T14:11:19.337Z">
+<meta property="og:image" content="http://example.com/2021/09/07/Json%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86/json_1.PNG">
+<meta property="og:image" content="http://example.com/2021/09/07/Json%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86/json_2.PNG">
+<meta property="og:image" content="http://example.com/2021/09/07/Json%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86/json_3.PNG">
+<meta property="og:image" content="http://example.com/2021/09/07/Json%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86/json_4.PNG">
+<meta property="og:image" content="http://example.com/2021/09/07/Json%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86/JsonUtility_1.PNG">
+<meta property="og:image" content="http://example.com/2021/09/07/Json%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86/JsonUtility_2.PNG">
+<meta property="og:image" content="http://example.com/2021/09/07/Json%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86/LitJson_1.PNG">
+<meta property="og:image" content="http://example.com/2021/09/07/Json%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86/LitJson_2.PNG">
+<meta property="og:image" content="http://example.com/2021/09/07/Json%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86/LitJson_3.PNG">
+<meta property="og:image" content="http://example.com/2021/09/07/Json%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86/LitJson_4.PNG">
+<meta property="og:image" content="http://example.com/2021/09/07/Json%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86/LitJson_5.PNG">
+<meta property="og:image" content="http://example.com/2021/09/07/Json%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86/LitJson_6.PNG">
+<meta property="article:published_time" content="2021-09-07T05:40:22.000Z">
+<meta property="article:modified_time" content="2021-09-07T14:08:58.295Z">
 <meta property="article:author" content="我说停停">
-<meta property="article:tag" content="Unity">
-<meta property="article:tag" content="FSM">
+<meta property="article:tag" content="Json">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2021/08/12/FSM%E7%9A%84%E5%B0%8F%E7%BB%93/FSM_1.PNG">
+<meta name="twitter:image" content="http://example.com/2021/09/07/Json%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86/json_1.PNG">
 
 
-<link rel="canonical" href="http://example.com/2021/08/12/FSM%E7%9A%84%E5%B0%8F%E7%BB%93/">
+<link rel="canonical" href="http://example.com/2021/09/07/Json%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2021/08/12/FSM%E7%9A%84%E5%B0%8F%E7%BB%93/","path":"2021/08/12/FSM的小结/","title":"FSM的小结"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2021/09/07/Json%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86/","path":"2021/09/07/Json知识点整理/","title":"Json知识点整理"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>FSM的小结 | 瞎写</title>
+<title>Json知识点整理 | 瞎写</title>
   
 
 
@@ -122,7 +132,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#UnityWiki%E4%B8%8A%E7%9A%84FSM"><span class="nav-number">1.</span> <span class="nav-text">UnityWiki上的FSM</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Json"><span class="nav-number">1.</span> <span class="nav-text">Json</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JsonUtility"><span class="nav-number">2.</span> <span class="nav-text">JsonUtility</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LitJson"><span class="nav-number">3.</span> <span class="nav-text">LitJson</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -197,7 +207,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/08/12/FSM%E7%9A%84%E5%B0%8F%E7%BB%93/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/07/Json%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/header.jpg">
@@ -210,7 +220,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          FSM的小结
+          Json知识点整理
         </h1>
 
         <div class="post-meta-container">
@@ -222,7 +232,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2021-08-12 17:29:46 / 修改时间：22:11:19" itemprop="dateCreated datePublished" datetime="2021-08-12T17:29:46+08:00">2021-08-12</time>
+      <time title="创建时间：2021-09-07 13:40:22 / 修改时间：22:08:58" itemprop="dateCreated datePublished" datetime="2021-09-07T13:40:22+08:00">2021-09-07</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -244,19 +254,49 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>对于现阶段所接触的FSM有限状态机的小结.</p>
+        <p>现阶段所掌握的Json相关技术的整理归纳</p>
 <span id="more"></span>
 
-<h2 id="UnityWiki上的FSM"><a href="#UnityWiki上的FSM" class="headerlink" title="UnityWiki上的FSM"></a><a target="_blank" rel="noopener" href="http://wiki.unity3d.com/index.php/Finite_State_Machine">UnityWiki上的FSM</a></h2><div style="text-align:center"><img src="/2021/08/12/FSM%E7%9A%84%E5%B0%8F%E7%BB%93/FSM_1.PNG" width="50%" height="50%" title="FSM1" alt="FSM1"></div>
-
+<h2 id="Json"><a href="#Json" class="headerlink" title="Json"></a>Json</h2><ul>
+<li><p>{}对象</p>
+<div style="text-align:center"><img src="/2021/09/07/Json%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86/json_1.PNG" width="30%" height="30%" title="打包" alt="打包"></div></li>
+<li><p>[]数组</p>
+<div style="text-align:center"><img src="/2021/09/07/Json%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86/json_2.PNG" width="20%" height="20%" title="打包" alt="打包"></div></li>
+<li><p>对象与数组的相互嵌套</p>
+<div style="text-align:center"><img src="/2021/09/07/Json%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86/json_3.PNG" width="30%" height="30%" title="打包" alt="打包"></div>
+<div style="text-align:center"><img src="/2021/09/07/Json%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86/json_4.PNG" width="30%" height="30%" title="打包" alt="打包"></div></li>
+</ul>
+<h2 id="JsonUtility"><a href="#JsonUtility" class="headerlink" title="JsonUtility"></a>JsonUtility</h2><ul>
+<li><p>写Json</p>
 <ol>
-<li>添加Transition和StateID两个枚举类;默认过渡条件:NullTransition = 0,默认状态ID:NullStateID = 0,在此基础上添加所需的过渡条件和状态ID</li>
-<li>创建状态类继承自FSMState,设置stateID</li>
-<li>根据需要重写那4个方法</li>
-<li>在外界实例化FSMSystem</li>
-<li>初始化FSMSystem:实例化状态对象,绑定状态ID与过渡条件,添加状态</li>
-<li>根据需要,调用PerformTransition这个状态改变的方法,然后在外界实现行为,或者在当前状态中调用Reason,判断是否需要过渡状态,并调用Act,实现当前状态下的行为;</li>
+<li>创建序列化对象</li>
+<li>实例化对象</li>
+<li>赋值</li>
+<li>JsonUtility.ToJson()</li>
+<li>写入Json文件<div style="text-align:center"><img src="/2021/09/07/Json%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86/JsonUtility_1.PNG" width="50%" height="50%" title="打包" alt="打包"></div></li>
 </ol>
+</li>
+<li><p>读Json</p>
+<ol>
+<li>创建序列化对象</li>
+<li>获取Json文件</li>
+<li>JsonUtility.FromJson<T>()</T></li>
+<li>存储<div style="text-align:center"><img src="/2021/09/07/Json%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86/JsonUtility_2.PNG" width="50%" height="50%" title="打包" alt="打包"></div></li>
+</ol>
+</li>
+</ul>
+<h2 id="LitJson"><a href="#LitJson" class="headerlink" title="LitJson"></a>LitJson</h2><ul>
+<li><p>Litjson可以和JsonUtility一样读写json(略)</p>
+</li>
+<li><p>写Json(3个例子)</p>
+<div style="text-align:center"><img src="/2021/09/07/Json%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86/LitJson_1.PNG" width="50%" height="50%" title="打包" alt="打包"></div>
+<div style="text-align:center"><img src="/2021/09/07/Json%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86/LitJson_2.PNG" width="50%" height="50%" title="打包" alt="打包"></div>
+<div style="text-align:center"><img src="/2021/09/07/Json%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86/LitJson_3.PNG" width="50%" height="50%" title="打包" alt="打包"></div></li>
+<li><p>读Json(与上方写的例子一一对应)</p>
+<div style="text-align:center"><img src="/2021/09/07/Json%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86/LitJson_4.PNG" width="50%" height="50%" title="打包" alt="打包"></div>
+<div style="text-align:center"><img src="/2021/09/07/Json%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86/LitJson_5.PNG" width="50%" height="50%" title="打包" alt="打包"></div>
+<div style="text-align:center"><img src="/2021/09/07/Json%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86/LitJson_6.PNG" width="50%" height="50%" title="打包" alt="打包"></div></li>
+</ul>
 
     </div>
 
@@ -266,22 +306,18 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Unity/" rel="tag"># Unity</a>
-              <a href="/tags/FSM/" rel="tag"># FSM</a>
+              <a href="/tags/Json/" rel="tag"># Json</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2021/08/09/%E5%9F%BA%E4%BA%8E%E4%BF%A1%E6%81%AF%E6%94%B6%E5%8F%91%E7%9A%84Unity%E6%A1%86%E6%9E%B6/" rel="prev" title="基于信息收发的Unity框架">
-                  <i class="fa fa-chevron-left"></i> 基于信息收发的Unity框架
+                <a href="/2021/08/20/%E7%83%AD%E6%9B%B4%E6%96%B0_%E5%B0%8F%E7%BB%93/" rel="prev" title="热更新_小结">
+                  <i class="fa fa-chevron-left"></i> 热更新_小结
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2021/08/12/%E5%AF%B9%E8%B1%A1%E6%B1%A0%E7%9A%84%E5%B0%8F%E7%BB%93/" rel="next" title="对象池的小结">
-                  对象池的小结 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
